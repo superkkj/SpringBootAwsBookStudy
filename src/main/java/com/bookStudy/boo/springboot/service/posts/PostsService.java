@@ -25,7 +25,7 @@ public class PostsService {
     }
 
     @Transactional
-    public Long  update(Long id, PostUpdateRequestDto requestDto) {
+    public Long update(Long id, PostUpdateRequestDto requestDto) {
         Posts posts = postsRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없어요!id=" + id));
 
@@ -43,20 +43,19 @@ public class PostsService {
     }
 
     @Transactional(readOnly = true)
-    public List<PostsResponseDto> findAllDesc(){
+    public List<PostsResponseDto> findAllDesc() {
         return postsRepository.findAllDesc().stream()
                 .map(PostsResponseDto::new)
                 .collect(Collectors.toList());
     }
 
     @Transactional
-    public void delete (Long id){
+    public void delete(Long id) {
         Posts posts = postsRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없어요!"));
 
         postsRepository.delete(posts);
     }
-
 
 
 }
