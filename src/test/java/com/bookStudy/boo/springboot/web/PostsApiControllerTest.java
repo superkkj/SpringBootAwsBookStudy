@@ -13,7 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
-import org.springframework.http.*;
+import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
@@ -47,7 +47,7 @@ public class PostsApiControllerTest {
     private MockMvc mvc;
 
     @Before
-    public void setup(){
+    public void setup() {
         mvc = MockMvcBuilders
                 .webAppContextSetup(context)
                 .apply(springSecurity())
@@ -60,7 +60,7 @@ public class PostsApiControllerTest {
     }
 
     @Test
-    @WithMockUser(roles="USER")
+    @WithMockUser(roles = "USER")
     public void 등록() throws Exception {
 
         String title = "title";
@@ -92,7 +92,7 @@ public class PostsApiControllerTest {
 
 
     @Test
-    @WithMockUser(roles="USER")
+    @WithMockUser(roles = "USER")
     public void Posts_수정된다() throws Exception {
 
         //given

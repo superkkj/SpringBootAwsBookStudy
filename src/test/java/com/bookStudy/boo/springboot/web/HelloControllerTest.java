@@ -13,9 +13,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import static org.hamcrest.Matchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(controllers = HelloController.class,
@@ -28,7 +26,7 @@ public class HelloControllerTest {
     @Autowired
     private MockMvc mvc;
 
-    @WithMockUser(roles="USER")
+    @WithMockUser(roles = "USER")
     @Test
     public void hello가_리턴된다() throws Exception {
         String hello = "hello";
@@ -38,7 +36,7 @@ public class HelloControllerTest {
                 .andExpect(content().string(hello));
     }
 
-    @WithMockUser(roles="USER")
+    @WithMockUser(roles = "USER")
     @Test
     public void helloDto가_리턴된다() throws Exception {
         String name = "hello";
