@@ -39,7 +39,7 @@ deploy:
     - provider: codedeploy
       access_key_id: AKIA2YXGTDJNRLX7R67P # Travis repo settings에 설정된 값
       secret_access_key: d/DEOTlMKC61VwKgGQIb9oqPiF2JXrSYfP0QqSPs # Travis repo settings에 설정된 값
-      bucket: freelec-springboot-superkkj-build # S3 버킷
+      bucket: freelec-springboot-superkkj-build # S3 버킷 다시
       key: freelec-springboot2-webservice.zip # 빌드 파일을 압축해서 전달
       bundle_type: zip
       application: freelec-springboot2-webservice # 웹 콘솔에서 등록한 CodeDeploy 어플리케이션
