@@ -15,9 +15,9 @@ cache:
 script: "./gradlew clean build"
 
 #before_deploy:
-#  - zip -r freelec-springboot2-webservice *
-#  - mkdir -p deploy # zip에 포함시킬 파일들을 담을 디렉토리 생성
-#  - mv freelec-springboot2-webservice.zip deploy/freelec-springboot2-webservice.zip
+  - zip -r SpringBootAwsBookStudy *
+  - mkdir -p deploy # zip에 포함시킬 파일들을 담을 디렉토리 생성
+  - mv SpringBootAwsBookStudy.zip deploy/SpringBootAwsBookStudy-webservice.zip
 #  - mkdir -p before-deploy
 #  - cp scripts/*.sh before-deploy/
 #  - cp appspec.yml before-deploy/
@@ -41,7 +41,7 @@ deploy:
     access_key_id: AKIA2YXGTDJNRLX7R67P # Travis repo settings에 설정된 값
     secret_access_key: d/DEOTlMKC61VwKgGQIb9oqPiF2JXrSYfP0QqSPs # Travis repo settings에 설정된 값
     bucket: freelec-springboot-superkkj-build # S3 버킷 다시
-    key: freelec-springboot2-webservice.zip # 빌드 파일을 압축해서 전달
+    key: SpringBootAwsBookStudy.zip # 빌드 파일을 압축해서 전달
     bundle_type: zip
     application: freelec-springboot2-webservice # 웹 콘솔에서 등록한 CodeDeploy 어플리케이션
     deployment_group: freelec-springboot2-webservice-group # 웹 콘솔에서 등록한 CodeDeploy 배포 그룹
