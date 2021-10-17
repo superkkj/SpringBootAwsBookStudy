@@ -20,7 +20,7 @@ apply plugin : 'io.spring.dependency-management'
 
 
 group 'com.bookStudy.book'
-version '1.0.1-SNAPSHOT'
+version '1.0.1-SNAPSHOT' + new  Date().format("yyyyMMddmmss")
 
 sourceCompatibility = 1.8
 
