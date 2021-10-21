@@ -20,7 +20,7 @@ public class PostsRepositoryTest {
     PostsRepository postsRepository;
 
 
-    @After //단위 테스트 끝날때 작동 데이터 침범을 막기위해 .
+    @After //단위 테스트 끝날때 작동 데이터 침범을 막기위해
     public void cleanup() {
         postsRepository.deleteAll();
     }
